@@ -55,8 +55,6 @@ async def play(c: Client, m: Message):
             [
                 InlineKeyboardButton(text="«ᴍᴇɴᴜ»", callback_data="cbmenu"),
                 InlineKeyboardButton(text="«ᴄʟᴏsᴇ»", callback_data="cls"),
-            ],[
-                InlineKeyboardButton(text="«ᴄʜᴀɴɴᴇʟ»", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ]
         ]
     )
@@ -117,7 +115,7 @@ async def play(c: Client, m: Message):
 
     if replied:
         if replied.audio or replied.voice:
-            suhu = await replied.reply("📥 **downloading audio...**")
+            suhu = await replied.reply("📥 ")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -160,7 +158,7 @@ async def play(c: Client, m: Message):
                     "» reply to an **audio file** or **give something to search.**"
                 )
             else:
-                suhu = await m.reply("🔎 **searching...**")
+                suhu = await m.reply("🔎")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 if search == 0:
@@ -210,7 +208,7 @@ async def play(c: Client, m: Message):
                 "» reply to an **audio file** or **give something to search.**"
             )
         else:
-            suhu = await m.reply("🔎 **searching...**")
+            suhu = await m.reply("🔎")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
@@ -266,8 +264,6 @@ async def stream(c: Client, m: Message):
             [
                 InlineKeyboardButton(text="«ᴍᴇɴᴜ»", callback_data="cbmenu"),
                 InlineKeyboardButton(text="«ᴄʟᴏsᴇ»", callback_data="cls"),
-            ],[
-                InlineKeyboardButton(text="«ᴄʜᴀɴɴᴇʟ»", url=f"https://t.me/{UPDATES_CHANNEL}"),
             ]
         ]
     )
@@ -330,7 +326,7 @@ async def stream(c: Client, m: Message):
         await m.reply("» give me a live-link/m3u8 url/youtube link to stream.")
     else:
         link = m.text.split(None, 1)[1]
-        suhu = await m.reply("🔄 **processing stream...**")
+        suhu = await m.reply("🔄 ")
 
         regex = r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+"
         match = re.match(regex, link)
