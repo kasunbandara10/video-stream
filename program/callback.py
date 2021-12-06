@@ -41,7 +41,7 @@ async def cbmenu(_, query: CallbackQuery):
                 InlineKeyboardButton("⏸", callback_data="cbpause"),
                 InlineKeyboardButton("▶️", callback_data="cbresume"),
             ],[
-                InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"),
                 InlineKeyboardButton("ᴏᴡɴᴇʀ", url=f"https://t.me/{OWNER_NAME}"),
             ],[
                 InlineKeyboardButton("🗑 Close", callback_data="cls")],
