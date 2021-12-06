@@ -135,7 +135,7 @@ async def play(c: Client, m: Message):
                 await suhu.delete()
                 await m.reply_photo(
                     photo=f"{IMG_1}",
-                    caption=f"💡 **Track added to the queue**\n\n🏷 **Name:** [{songname}]({link})\n💭 **Chat:** `{chat_id}`\n🎧 **Request by:** {m.from_user.mention()}\n🔢 **At position »** `{pos}`",
+                    caption=f"\n🏷 **Name:** [{songname}]\n💭 **Chat:** `{chat_id}`\n🎧 **Request by:** {m.from_user.mention()}\n🔢 **At position »** `{pos}`",
                     reply_markup=keyboard,
                 )
             else:
@@ -151,7 +151,7 @@ async def play(c: Client, m: Message):
                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                 await m.reply_photo(
                     photo=f"{IMG_2}",
-                    caption=f"🏷 **Name:** {songname}\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`",
+                    caption=f"🏷 **Name:** [{songname}]\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`",
                     reply_markup=keyboard,
                 )
         else:
@@ -180,7 +180,7 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=f"{IMG_1}",
-                                caption=f"🏷 **Name:** {songname}\n💭 **Chat:** `{chat_id}`\n🔢 **At position »** `{pos}`",
+                                caption=f"🏷 **Name:** [{songname}]\n💭 **Chat:** `{chat_id}`\n🔢 **At position »** `{pos}`",
                                 reply_markup=keyboard,
                             )
                         else:
@@ -197,7 +197,7 @@ async def play(c: Client, m: Message):
                                 requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                                 await m.reply_photo(
                                     photo=f"{IMG_2}",
-                                    caption=f"💡 **music streaming started.**\n\n🏷 **Name:** [{songname}]({url})\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}",
+                                    caption=f"\n🏷 **Name:** [{songname}]({url})\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}",
                                     reply_markup=keyboard,
                                 )
                             except Exception as ep:
@@ -230,7 +230,7 @@ async def play(c: Client, m: Message):
                         )
                         await m.reply_photo(
                             photo=f"{IMG_1}",
-                            caption=f"🏷 **Name:** {songname}\n💭 **Chat:** `{chat_id}`\n🔢 **At position »** `{pos}`",
+                            caption=f"🏷 **Name:** [{songname}]\n💭 **Chat:** `{chat_id}`\n🔢 **At position »** `{pos}`",
                             reply_markup=keyboard,
                         )
                     else:
@@ -247,7 +247,7 @@ async def play(c: Client, m: Message):
                             requester = f"[{m.from_user.first_name}](tg://user?id={m.from_user.id})"
                             await m.reply_photo(
                                 photo=f"{IMG_2}",
-                                caption=f"🏷 **Name:** {songname}\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}",
+                                caption=f"🏷 **Name:** [{songname}]\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}",
                                 reply_markup=keyboard,
                             )
                         except Exception as ep:
