@@ -34,15 +34,15 @@ async def cbmenu(_, query: CallbackQuery):
     if not a.can_manage_voice_chats:
         return await query.answer("💡 only admin with manage voice chats permission that can tap this button !", show_alert=True)
     await query.edit_message_text(
-        f"⚙️ {query.message.chat.title}",
+        f"{query.message.chat.title}",
         reply_markup=InlineKeyboardMarkup(
             [[
                 InlineKeyboardButton("⏹", callback_data="cbstop"),
                 InlineKeyboardButton("⏸", callback_data="cbpause"),
                 InlineKeyboardButton("▶️", callback_data="cbresume"),
             ],[
-                InlineKeyboardButton("🔇", callback_data="cbmute"),
-                InlineKeyboardButton("🔊", callback_data="cbunmute"),
+                InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                InlineKeyboardButton("ᴏᴡɴᴇʀ", url=f"https://t.me/{OWNER_NAME}"),
             ],[
                 InlineKeyboardButton("🗑 Close", callback_data="cls")],
             ]
